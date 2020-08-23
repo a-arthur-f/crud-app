@@ -1,0 +1,56 @@
+.modal-content {
+    width: 50.5%;
+    height: 55%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+    
+    transition: 1s;
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    color: #222;
+}
+
+.modal-content .add {
+    margin-top: 4rem;
+    width: 18rem;
+}
+
+.modal-content.disabled {
+    z-index: -1;
+    opacity: 0;
+    animation: hide .25s;
+    transform: scale(0);
+} @keyframes hide {
+    from {
+        z-index: 2;
+        transform: scale(1);
+        opacity: 1;
+    } to {
+        z-index: -1;
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.modal-content.active {
+    z-index: 2;
+    opacity: 1;
+    animation: show .2s;
+    transform: scale(1);
+} @keyframes show {
+    from {
+        z-index: -1;
+        transform: scale(0);
+        opacity: 0;
+    } to {
+        transform: scale(1);
+        z-index: 2;
+        transform: scale(1);
+    }
+}

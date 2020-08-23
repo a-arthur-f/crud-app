@@ -1,0 +1,40 @@
+.form-input {
+    transition: .5s;
+}
+
+.form-input:focus-within {
+    transform: scale(1.05);
+}
+
+#movie-name {
+    width: 30rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1.2rem;
+    transition: .5s;
+    outline: none;
+}
+
+#movie-name:focus {
+    border-color: #5c6bc0;
+}
+
+#movie-name:focus, #movie-name:not(:placeholder-shown) {
+    border-color: #5c6bc0;
+}
+
+label {
+    display: block;
+    font-size: 1.4rem;
+    color: #aaa;
+    transform: translateY(-1.6rem);
+    transform-origin: 0 0;
+    transition: all .5s;
+
+    user-select: none;
+}
+
+#movie-name:focus + label, #movie-name:not(:placeholder-shown) + label {
+    transform: translateY(-3.2rem) scale(.8);
+    color: #5c6bc0;
+}
